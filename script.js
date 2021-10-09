@@ -1,38 +1,45 @@
-let player = "";
-let computer = "";
+const game = {
+  1: "scissors",
+  2: "paper",
+  3: "rock",
+};
+
+let computerScore = 0;
+let playerScore = 0;
 
 let computerPlay = function () {
   let random = Math.floor(Math.random() * 3 + 1);
-  if (random === 1) {
-    computer = "Scissor";
-    return random;
-  } else if (random === 2) {
-    computer = "Paper";
-    return random;
-  } else {
-    computer = "Rock";
-    return random;
-  }
+  return game[random];
 };
-
-console.log(`computerPlay = ${computerPlay()}`);
 
 let playerSelection = function () {
-  player = prompt("Scissor, Paper or Rock?").toLowerCase();
-  if (player === "scissor") {
-    return 1;
-  } else if (player === "paper") {
-    return 2;
-  } else {
-    return 3;
-  }
+  player = prompt("scissors, paper or rock?").toLowerCase();
+  return player;
 };
-
-console.log(`playerSelection = ${playerSelection()}`);
 
 let playRound = function (computerPlay, playerSelection) {
-  console.log(computerPlay);
-  console.log(playerSelection);
+  if (computerPlay === playerSelection) return "Draw";
+  else if (
+    (computerPlay === "scissors" && playerSelection === "rock") ||
+    (computerPlay === "rock" && playerSelection === "paper")
+  )
+    return "You win! 🥳";
+  else return `You lose, ${computerPlay} beats ${playerSelection} 😒`;
 };
 
-console.log(computerPlay === playerSelection, playRound());
+let fullGame = function (playRound) {
+  if (playRound === "You win! 🥳") playerScore++;
+  else if (
+    playRound === `You lose, ${computerPlay} beats ${playerSelection} 😒`
+  )
+    computerScore++;
+};
+
+for (let i = 0; i < 5; i++) {
+  fullGame(playRound());
+}
+//   playerScore > computerScore
+//     ? alert("You won the game!")
+//     : alert("You lost. Refresh to start new round.");
+
+console.log(playRound(computerPlay(), playerSelection()));
