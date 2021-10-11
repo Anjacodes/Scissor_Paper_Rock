@@ -9,7 +9,7 @@ let playerScore = 0;
 let computer = "";
 let player = "";
 
-let computerPlay = function () {
+const computerPlay = function () {
   let random = Math.floor(Math.random() * 3 + 1);
   computer = game[random];
 };
@@ -18,12 +18,12 @@ let playerSelection = function () {
   player = prompt("scissors, paper or rock?").toLowerCase();
 };
 
-let fullGame = function () {
+const fullGame = function () {
   for (let i = 0; i < 5; i++) {
     computerPlay();
     playerSelection();
     if (computer === player) {
-      console.log(`Round ${i + 1}: DRAW ${computer} - ${player} - Play again!`);
+      console.log(`Round ${i + 1}: DRAW ${computer} : ${player}`);
     } else if (
       (computer === "scissors" && player === "rock") ||
       (computer === "rock" && player === "paper") ||
@@ -33,9 +33,7 @@ let fullGame = function () {
       console.log(`Round ${i + 1}: YOU WIN! ${player} beats ${computer} 🥳`);
     } else {
       computerScore++;
-      console.log(
-        `Round ${i + 1}: YOU LOSE! ${computer} beats ${player}. Try again! 💁`
-      );
+      console.log(`Round ${i + 1}: YOU LOSE! ${computer} beats ${player} 💁`);
     }
   }
   if (computerScore === playerScore) {
