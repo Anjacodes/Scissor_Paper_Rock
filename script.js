@@ -26,7 +26,8 @@ let fullGame = function () {
       console.log(`Round ${i + 1}: DRAW - Play again!`, computer, player);
     } else if (
       (computer === "scissors" && player === "rock") ||
-      (computer === "rock" && player === "paper")
+      (computer === "rock" && player === "paper") ||
+      (computer === "paper" && player === "scissors")
     ) {
       playerScore++;
       console.log(`Round ${i + 1}: YOU WIN! ${player} beats ${computer} 🥳`);
