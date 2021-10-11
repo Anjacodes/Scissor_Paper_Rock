@@ -23,7 +23,7 @@ let fullGame = function () {
     computerPlay();
     playerSelection();
     if (computer === player) {
-      console.log(`Round ${i + 1}: DRAW - Play again!`, computer, player);
+      console.log(`Round ${i + 1}: DRAW ${computer} - ${player} - Play again!`);
     } else if (
       (computer === "scissors" && player === "rock") ||
       (computer === "rock" && player === "paper") ||
@@ -39,7 +39,9 @@ let fullGame = function () {
     }
   }
   if (computerScore === playerScore) {
-    console.log("Game over! Draw - try again!");
+    console.log(
+      `Game over! Draw ${computerScore} : ${playerScore} - try again!`
+    );
   } else
     computerScore > playerScore
       ? console.log(`Game over! You lose ${computerScore} : ${playerScore}`)
