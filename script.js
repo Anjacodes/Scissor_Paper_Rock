@@ -6,40 +6,43 @@ const game = {
 
 let computerScore = 0;
 let playerScore = 0;
+let computer = "";
+let player = "";
 
 let computerPlay = function () {
   let random = Math.floor(Math.random() * 3 + 1);
-  return game[random];
+  computer = game[random];
 };
 
 let playerSelection = function () {
   player = prompt("scissors, paper or rock?").toLowerCase();
-  return player;
 };
 
-let playRound = function (computerPlay, playerSelection) {
-  if (computerPlay === playerSelection) return "Draw";
-  else if (
-    (computerPlay === "scissors" && playerSelection === "rock") ||
-    (computerPlay === "rock" && playerSelection === "paper")
-  )
-    return "You win! 🥳";
-  else return `You lose, ${computerPlay} beats ${playerSelection} 😒`;
+let fullGame = function () {
+  for (let i = 0; i < 5; i++) {
+    computerPlay();
+    playerSelection();
+    if (computer === player) {
+      console.log(`Round ${i + 1}: DRAW - Play again!`, computer, player);
+    } else if (
+      (computer === "scissors" && player === "rock") ||
+      (computer === "rock" && player === "paper")
+    ) {
+      playerScore++;
+      console.log(`Round ${i + 1}: YOU WIN! ${player} beats ${computer} 🥳`);
+    } else {
+      computerScore++;
+      console.log(
+        `Round ${i + 1}: YOU LOSE! ${computer} beats ${player}. Try again! 💁`
+      );
+    }
+  }
+  if (computerScore === playerScore) {
+    console.log("Game over! Draw - try again!");
+  } else
+    computerScore > playerScore
+      ? console.log(`Game over! You lose ${computerScore} : ${playerScore}`)
+      : console.log(`Game over! You win ${playerScore} : ${computerScore}`);
 };
 
-let fullGame = function (playRound) {
-  if (playRound === "You win! 🥳") playerScore++;
-  else if (
-    playRound === `You lose, ${computerPlay} beats ${playerSelection} 😒`
-  )
-    computerScore++;
-};
-
-for (let i = 0; i < 5; i++) {
-  fullGame(playRound());
-}
-//   playerScore > computerScore
-//     ? alert("You won the game!")
-//     : alert("You lost. Refresh to start new round.");
-
-console.log(playRound(computerPlay(), playerSelection()));
+fullGame();
