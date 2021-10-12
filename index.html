@@ -5,8 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <h2 id="title">Rock Paper Scissors</h2>
+    <h2 id="roundCount">ROUND 1</h2>
+
+    <!-- Score Board -->
+    <div id="scoreboard">
+      <ul>
+        <li class="playerWin">
+          <p class="score__title">WIN</p>
+          <p class="score">0</p>
+        </li>
+        <li class="ties">
+          <p class="score__title">TIES</p>
+          <p class="score">0</p>
+        </li>
+        <li class="computerWin">
+          <p class="score__title">WIN</p>
+          <p class="score">0</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Game Board-->
+    <div id="gameBoard">
+      <ul>
+        <li class="hand_container">
+          <div><img src=images/rock_player.png></div>
+        </li>
+        <li>
+          <div>
+            <p class="rounds__title">ROUNDS</p>
+            <div>Round 0</div>
+            <div>Round -1</div>
+          </div>
+          <div></div>
+        </li>
+        <li class="hand_container">
+          <div><img src=images/rock_computer.png></div>
+        </li>
+      </ul>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

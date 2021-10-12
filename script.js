@@ -46,4 +46,4 @@ const fullGame = function () {
       : console.log(`Game over! You win ${playerScore} : ${computerScore}`);
 };
 
-fullGame();
+// fullGame();

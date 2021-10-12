@@ -1,0 +1,55 @@
+body {
+  text-align: center;
+  font-family: "Alegreya Sans SC", sans-serif;
+}
+
+h2 {
+  color: tomato;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+li {
+  list-style-type: none;
+  background-color: yellow;
+}
+
+#roundCount {
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+#title {
+  text-align: left;
+  margin-left: 3%;
+  margin-bottom: 2%;
+}
+
+#gameBoard {
+  margin-right: 1%;
+}
+
+#scoreboard {
+  margin-top: 3%;
+  margin-right: 15%;
+  margin-bottom: 3%;
+  margin-left: 15%;
+}
+
+.score__title {
+  font-weight: 800;
+  color: #9d9d9d;
+  font-size: 1.5rem;
+}
+
+.score {
+  font-size: 2.2rem;
+}
+
+.rounds__title {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
