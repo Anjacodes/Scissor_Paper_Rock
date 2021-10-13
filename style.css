@@ -1,6 +1,9 @@
 body {
   text-align: center;
   font-family: "Alegreya Sans SC", sans-serif;
+  background-color: #f7f6f2;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 
 h2 {
@@ -15,6 +18,7 @@ ul {
 li {
   list-style-type: none;
   background-color: yellow;
+  width: 30%;
 }
 
 #roundCount {
@@ -30,6 +34,7 @@ li {
 
 #gameBoard {
   margin-right: 1%;
+  margin-left: 1%;
 }
 
 #scoreboard {
@@ -52,4 +57,21 @@ li {
 .rounds__title {
   font-size: 2.5rem;
   font-weight: 800;
+}
+
+.round_icon {
+  width: 7%;
+  height: 30%;
+}
+
+.round_track_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.round_counter {
+  margin-left: 3%;
+  margin-right: 3%;
+  font-size: 1.2rem;
 }

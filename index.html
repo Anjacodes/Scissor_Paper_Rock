@@ -36,23 +36,44 @@
     </div>
 
     <!-- Game Board-->
+
+    <!-- Player Side-->
     <div id="gameBoard">
       <ul>
         <li class="hand_container">
           <div><img src=images/rock_player.png></div>
         </li>
+
+        <!-- Center (Round Tracker)-->
+
         <li>
           <div>
             <p class="rounds__title">ROUNDS</p>
-            <div>Round 0</div>
-            <div>Round -1</div>
+            <div class="round_track_container">
+              <img class="round_icon" src="images/rock_icon_player.png" />
+              <p class="round_counter">Round 0</p>
+              <img class="round_icon" src="images/rock_icon_computer.png" />
+            </div>
+            <div class="round_track_container">
+              <img class="round_icon" src="images/rock_icon_player.png" />
+              <p class="round_counter">Round -1</p>
+              <img class="round_icon" src="images/rock_icon_computer.png" />
+            </div>
           </div>
-          <div></div>
         </li>
+
+        <!-- Computer Side-->
+
         <li class="hand_container">
           <div><img src=images/rock_computer.png></div>
         </li>
       </ul>
+    </div>
+
+    <div>
+      <button></button>
+      <button></button>
+      <button></button>
     </div>
 
     <script src="script.js"></script>
